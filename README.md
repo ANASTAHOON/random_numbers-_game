@@ -2,7 +2,7 @@
 📌 Project Description
 This is a simple interactive Math Game built using Dart programming language. The game allows users to practice basic arithmetic operations with increasing difficulty levels.
 
-🚀 Game Features
+ Game Features
 ✅ Basic Level (Core)
 The game asks the user to solve random math problems.
 
@@ -36,5 +36,5 @@ Score = (correct answers / total answers) * 100
 
 🎉 If your score is more than 50% ➡️ shows a congratulations message.
 
-❗ If your score is less than 50% ➡️ motivates you to work harder.
+ If your score is less than 50% ➡️ motivates you to work harder.
 
