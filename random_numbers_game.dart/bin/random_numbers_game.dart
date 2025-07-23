@@ -20,17 +20,23 @@ void main() {
   while (continuePlay.toLowerCase() == 'yes') {
     // >>>>> TASK 2 ADD LEVELS <<<<
     List<String> operations = ['+'];
+        // in lvl 1 we have only "+" operation
+
     int currentRangeMax = rangeMax + (level - 1) * 10;
+// i used this formula so that each level increases the range
+    //without increasing it from the first level  because it will be multiplied by 0 at the beginning
 
     if (level >= 2) operations.add('-');
     if (level >= 3) operations.add('*');
     if (level >= 4) operations.add('/');
+// to add extra operations in each level
 
     Random random = Random();
     int num1 = random.nextInt(currentRangeMax - rangeMin + 1) + rangeMin;
     int num2 = random.nextInt(currentRangeMax - rangeMin + 1) + rangeMin;
     String op = operations[random.nextInt(operations.length)];
     double correctAnswer;
+// generta numbers in random
 
     if (op == '+') {
       correctAnswer = num1 + num2.toDouble();
@@ -42,11 +48,16 @@ void main() {
       while (num2 == 0 || (num1 / num2) != (num1 / num2).truncateToDouble()) {
         num2 = random.nextInt(currentRangeMax - rangeMin + 1) + rangeMin;
       }
+            //regenerate new numbers if the division is not an integer
+
       correctAnswer = (num1 / num2).truncateToDouble();
     }
 
     print("Level $level  Solve $num1 $op $num2 = ?");
     double Answer = double.parse(stdin.readLineSync()!);
+//i could use abs() to turn negative values into positive as well
+    //but that would make most answers appear correct and the final score wouldn’t be accurate
+    // so I removed it.
 
     if (Answer == correctAnswer) {
       print("Correct Answer");
