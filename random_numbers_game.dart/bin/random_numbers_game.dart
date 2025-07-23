@@ -36,7 +36,7 @@ void main() {
     int num2 = random.nextInt(currentRangeMax - rangeMin + 1) + rangeMin;
     String op = operations[random.nextInt(operations.length)];
     double correctAnswer;
-// generta numbers in random
+// generata numbers in random
 
     if (op == '+') {
       correctAnswer = num1 + num2.toDouble();
